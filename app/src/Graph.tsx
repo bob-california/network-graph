@@ -19,7 +19,6 @@ export const Graph = () => {
     tooltip: {},
     legend: [
       {
-        // selectedMode: 'single',
         data: graph?.categories.map((a: any) => {
           return a.name;
         }),
