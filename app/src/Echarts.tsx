@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactECharts from "echarts-for-react";
-export const Graph = () => {
-  const [graph, setGraph] = useState<any>();
 
-  useEffect(() => {
-    fetch("/les-miserables.json")
-      .then((res) => res.json())
-      .then((json) => setGraph(json));
-  }, []);
-
+export const Graph = ({ graph }: { graph: any }) => {
   const options = {
     title: {
       text: "Les Miserables",
@@ -32,7 +25,7 @@ export const Graph = () => {
         type: "graph",
         layout: "none",
         data: graph?.nodes,
-        links: graph?.links,
+        links: graph?.edges,
         categories: graph?.categories,
         roam: true,
         legendHoverLink: false,
@@ -60,7 +53,6 @@ export const Graph = () => {
 
   return (
     <>
-      <h1>Les miserables</h1>
       {graph ? (
         <ReactECharts
           option={options}

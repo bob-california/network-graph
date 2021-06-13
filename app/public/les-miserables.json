@@ -694,7 +694,7 @@
       "category": 8
     }
   ],
-  "links": [
+  "edges": [
     {
       "source": "1",
       "target": "0"
